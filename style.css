@@ -151,5 +151,9 @@ figcaption{font-size:14px;color:var(--muted)}
 @media (max-width:760px){
   .release{grid-template-columns:1fr}
   .release .art{display:none}
+  .release .info h1{font-size:28px}
+  .release .info .lede{font-size:17px}
+  .release .copybtn{display:none}
+  .release{gap:0}
   .proof{margin-top:0}
 }
