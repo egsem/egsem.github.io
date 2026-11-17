@@ -682,3 +682,8 @@ html.fx .tiles:not(.open) .tile:not(.more):nth-of-type(n+6){display:none}
 .contact{--dk:#4F6BFF;--dk-ink:#FFFFFF;--dk-mut:rgba(255,255,255,.75);--dk-line:rgba(255,255,255,.42)}
 .contact .btn.primary{background:#fff;color:#4F6BFF;border-color:#fff}
 .contact .btn.primary:hover{background:#141414;border-color:#141414;color:#fff}
+.contact-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.contact-cta{font-size:clamp(20px,2vw,26px);font-weight:500;letter-spacing:-.02em;color:var(--dk-ink)}
+.contact-cta::after{content:" →";opacity:.7}
+.contact-row .actions{margin:0}
+@media (max-width:600px){.contact-row{flex-direction:column;align-items:flex-start;gap:12px}.contact-cta::after{content:" ↓"}}
