@@ -675,3 +675,10 @@ html.fx .tiles:not(.open) .tile:not(.more):nth-of-type(n+6){display:none}
 .hero .label::before,.hero-text>.label::before{color:var(--dk-ink)}
 .hero .btn.primary:hover,.contact .btn.primary:hover{background:#fff;border-color:#fff;color:var(--dk)}
 .hero .btn.primary,.contact .btn.primary{color:var(--dk)}
+/* v11: hero muted green */
+.hero{--dk:#3C4A44}
+.hero .btn.primary{color:#3C4A44}
+/* v12: contact in light Luminous Blue */
+.contact{--dk:#4F6BFF;--dk-ink:#FFFFFF;--dk-mut:rgba(255,255,255,.75);--dk-line:rgba(255,255,255,.42)}
+.contact .btn.primary{background:#fff;color:#4F6BFF;border-color:#fff}
+.contact .btn.primary:hover{background:#141414;border-color:#141414;color:#fff}
