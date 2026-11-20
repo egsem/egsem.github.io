@@ -687,3 +687,13 @@ html.fx .tiles:not(.open) .tile:not(.more):nth-of-type(n+6){display:none}
 .contact-cta::after{content:" →";opacity:.7}
 .contact-row .actions{margin:0}
 @media (max-width:600px){.contact-row{flex-direction:column;align-items:flex-start;gap:12px}.contact-cta::after{content:" ↓"}}
+/* v13: contrast ≥4.5 for grey captions; one accent colour (blue) for all hovers */
+:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--muted:#666663}
+.tile,.meter,.stop,.xp,.chips li{--c:var(--blue)!important}
+.tile:hover .tile-t,.meter.tile:hover .tile-t{color:var(--blue)!important;text-decoration:none!important}
+.tile:hover .tile-foot span:first-child{color:var(--muted)!important}
+.cases-head{margin:0 0 18px}
+/* v14: about table and skills chips start on one line */
+#about .spec-strip.in-about{margin-top:0!important}
+#about .sec-head{margin-bottom:4px}
+#about .sec-head + .chips,#about .sec-head + .spec-strip{margin-top:0!important}
