@@ -2,6 +2,12 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<script>(function(){var d=document.documentElement;try{if(localStorage.getItem('theme')==='dark')d.setAttribute('data-theme','dark')}catch(e){}
+document.addEventListener('click',function(e){var b=e.target.closest('.theme-btn');if(!b)return;var dark=d.getAttribute('data-theme')!=='dark';
+d.classList.add('theme-anim');if(dark)d.setAttribute('data-theme','dark');else d.removeAttribute('data-theme');
+b.setAttribute('aria-label',dark?'Светлая тема':'Тёмная тема');try{localStorage.setItem('theme',dark?'dark':'light')}catch(e){}
+setTimeout(function(){d.classList.remove('theme-anim')},400)});})();</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>«Ночь в музее» в Гараже особого назначения: 567 билетов со скидкой 85% против 10 годом раньше — кейс Егор Семёнов</title>
 <meta name="description" content="Спецпроект RUSSPASS: эксклюзивная продажа билетов на «Ночь в музее» в Музее Гаража особого назначения ФСО — 567 билетов против 10 онлайн годом раньше, 982 тыс. показов и 13 тыс. кликов. Егор Семёнов.">
@@ -49,7 +55,7 @@ document.addEventListener("click",function(ev){
 </head>
 <body>
 <div class="wrap" id="top">
-<header class="bar"><a class="brand" href="index.html"><span class="back" aria-hidden="true">←</span>Все кейсы</a><nav class="topnav" aria-label="Разделы"><a href="#top">Начало</a><a href="#problem">Проблема</a><a href="#hypo">Гипотеза</a><a href="#impl">Реализация</a><a href="#res">Результат</a><a href="#how">Как измеряли</a><a href="#did">Что делал</a><a href="#screens">Экраны</a></nav><a class="btn primary small" href="https://t.me/aaegorsemyonov" rel="noopener">Связаться</a></header>
+<header class="bar"><a class="brand" href="index.html"><span class="back" aria-hidden="true">←</span>Все кейсы</a><nav class="topnav" aria-label="Разделы"><a href="#top">Начало</a><a href="#problem">Проблема</a><a href="#hypo">Гипотеза</a><a href="#impl">Реализация</a><a href="#res">Результат</a><a href="#how">Как измеряли</a><a href="#did">Что делал</a><a href="#screens">Экраны</a></nav><div class="bar-end"><button class="theme-btn sound-btn" type="button" data-goal="sound" aria-label="Включить звук" aria-pressed="false"><svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button><button class="theme-btn" type="button" data-goal="theme" aria-label="Тёмная тема"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg></button><a class="btn primary small" href="https://t.me/aaegorsemyonov" rel="noopener">Связаться</a></div></header>
 <header class="case-head">
   <div class="case-text">
     <span class="label">RUSSPASS, май 2023</span>
@@ -68,7 +74,7 @@ document.addEventListener("click",function(ev){
 <script>
 document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
  var t=b.getAttribute('data-copy'),o=b.textContent;
- var done=function(){b.textContent='Скопировано';setTimeout(function(){b.textContent=o},1600)};
+ var done=function(){b.textContent='Скопировано, жду письма ✶';b.classList.add('copied');window.starBurst&&starBurst(b,10);setTimeout(function(){b.textContent=o;b.classList.remove('copied')},2200)};
  try{navigator.clipboard.writeText(t).then(done,function(){prompt('Почта',t)})}catch(e){}
 });});
 </script>
@@ -206,5 +212,68 @@ document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener(
   d.addEventListener('pointerleave',function(){root.classList.remove('cur-on','cur-card')});
 })();
 </script>
+<script>(function(){
+var KEY='egsem-stars',TOTAL=3,d=document;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
+function save(a){try{localStorage.setItem(KEY,JSON.stringify(a))}catch(e){}}
+var found=load();
+window.starBurst=function(el,n){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;var r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;n=n||10;
+ for(var i=0;i<n;i++){(function(i){var s=d.createElement('span');s.className='spark';s.textContent='✶';s.style.left=cx+'px';s.style.top=cy+'px';d.body.appendChild(s);
+  var a=Math.PI*2*i/n+Math.random()*.5,dist=40+Math.random()*50,dx=Math.cos(a)*dist,dy=Math.sin(a)*dist;
+  s.animate([{transform:'translate(-50%,-50%) scale(.6) rotate(0)',opacity:1},{transform:'translate(calc(-50% + '+dx+'px),calc(-50% + '+dy+'px)) scale(1.1) rotate(180deg)',opacity:0}],{duration:700+Math.random()*300,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=function(){s.remove()}})(i)}};
+var toastEl,badge,modal;
+function toast(t){if(!toastEl){toastEl=d.createElement('div');toastEl.className='qtoast';toastEl.setAttribute('role','status');d.body.appendChild(toastEl)}toastEl.textContent=t;toastEl.classList.add('on');clearTimeout(toastEl._t);toastEl._t=setTimeout(function(){toastEl.classList.remove('on')},3200)}
+function renderBadge(){if(!badge){badge=d.createElement('button');badge.type='button';badge.className='qbadge';badge.setAttribute('data-goal','quest_badge');d.body.appendChild(badge);
+ badge.onclick=function(){found.length>=TOTAL?openModal():toast('Подсказка: ищите звёзды там, где я прятал головоломки и ставил штампы')}}
+ badge.innerHTML='<i>✶</i> '+found.length+' из '+TOTAL;badge.classList.toggle('on',found.length>0)}
+function openModal(){if(!modal){modal=d.createElement('div');modal.className='qmodal';modal.setAttribute('role','dialog');modal.setAttribute('aria-modal','true');
+ modal.innerHTML='<div class="qcard"><div class="qstars">✶✶✶</div><h3>Все три звезды найдены</h3><p>Так работали мои AR-квесты: 12 500 человек искали подсказки по Москве, и до финала дошли около 7 500. Вы дошли до финала здесь, значит, нам точно есть о чём поговорить. Напишите мне в Telegram слово «звезда».</p><div class="qrow" data-place="quest"><a class="btn primary" href="https://t.me/aaegorsemyonov" rel="noopener">Написать в Telegram</a><button class="btn qclose" type="button">Закрыть</button></div></div>';
+ d.body.appendChild(modal);modal.addEventListener('click',function(e){if(e.target===modal||e.target.classList.contains('qclose'))modal.classList.remove('on')});
+ d.addEventListener('keydown',function(e){if(e.key==='Escape')modal.classList.remove('on')})}
+ modal.classList.add('on');var st=modal.querySelector('.qstars');setTimeout(function(){starBurst(st,16)},250)}
+d.querySelectorAll('.qstar').forEach(function(b){var id=b.getAttribute('data-star');if(found.indexOf(id)>=0)b.classList.add('got');
+ b.addEventListener('click',function(){starBurst(b,12);if(found.indexOf(id)>=0){toast(found.length>=TOTAL?'Все звёзды уже у вас ✶':'Эта звезда уже найдена. Осталось '+(TOTAL-found.length));return}
+  found.push(id);save(found);b.classList.add('got');renderBadge();
+  if(found.length>=TOTAL){try{window.ym&&ym(114486741,'reachGoal','quest_done')}catch(e){}setTimeout(openModal,600);window.sfx&&sfx('quest')}
+  else toast('Звезда '+found.length+' из '+TOTAL+'. '+(found.length===1?'Ещё две спрятаны в кейсах':'Осталась одна'))})});
+renderBadge();
+})();</script>
+<script>(function(){
+var d=document,root=d.documentElement;
+/* sounds: свои файлы сюда, например click:'sounds/click.mp3' */
+var FILES={};
+var ctx=null,on=false;try{on=localStorage.getItem('sound')==='on'}catch(e){}
+function ac(){if(!ctx){var C=window.AudioContext||window.webkitAudioContext;if(!C)return null;ctx=new C()}if(ctx.state==='suspended')ctx.resume();return ctx}
+function tone(f,dur,type,vol,at,f2){var c=ac();if(!c)return;var t=c.currentTime+(at||0),o=c.createOscillator(),g=c.createGain();o.type=type||'sine';o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+dur);
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol||.08,t+.005);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g).connect(c.destination);o.start(t);o.stop(t+dur+.02)}
+function noise(dur,f1,f2,vol){var c=ac();if(!c)return;var t=c.currentTime,b=c.createBuffer(1,c.sampleRate*dur,c.sampleRate),a=b.getChannelData(0);for(var i=0;i<a.length;i++)a[i]=Math.random()*2-1;
+ var s=c.createBufferSource(),fl=c.createBiquadFilter(),g=c.createGain();s.buffer=b;fl.type='bandpass';fl.Q.value=1.2;fl.frequency.setValueAtTime(f1,t);fl.frequency.exponentialRampToValueAtTime(f2,t+dur);
+ g.gain.setValueAtTime(vol||.06,t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(fl).connect(g).connect(c.destination);s.start(t)}
+var SYN={click:function(){tone(1900,.03,'square',.025)},hover:function(){tone(1100,.04,'sine',.018)},
+ nav:function(){noise(.22,400,3200,.05)},view:function(){tone(660,.06,'triangle',.05);tone(990,.08,'triangle',.04,.05)},
+ star:function(){tone(1319,.25,'triangle',.07);tone(1976,.35,'triangle',.05,.08)},
+ quest:function(){[523,659,784,1047,1319].forEach(function(f,i){tone(f,.4,'triangle',.06,i*.09)})},
+ copy:function(){tone(500,.09,'sine',.09,0,1300)},theme:function(){noise(.04,2000,1500,.08);tone(180,.08,'sine',.08)},
+ on:function(){tone(440,.12,'triangle',.06);tone(880,.18,'triangle',.06,.09)},off:function(){tone(660,.12,'triangle',.05);tone(330,.18,'triangle',.05,.09)}};
+var cache={},lastHover=0;
+window.sfx=function(n,force){if(!on&&!force)return;if(FILES[n]){try{var a=cache[n]||(cache[n]=new Audio(FILES[n]));a.currentTime=0;a.volume=.6;a.play()}catch(e){}return}SYN[n]&&SYN[n]()};
+function setOn(v){on=v;root.classList.toggle('sound-on',v);d.querySelectorAll('.sound-btn').forEach(function(b){b.setAttribute('aria-label',v?'Выключить звук':'Включить звук');b.setAttribute('aria-pressed',v)});try{localStorage.setItem('sound',v?'on':'off')}catch(e){}}
+setOn(on);
+d.addEventListener('click',function(e){var el=e.target.closest('a,button');if(!el)return;
+ if(el.classList.contains('sound-btn')){var v=!on;setOn(v);sfx(v?'on':'off',true);return}
+ if(el.classList.contains('qstar'))return sfx('star');
+ if(el.classList.contains('copybtn'))return sfx('copy');
+ if(el.classList.contains('theme-btn'))return sfx('theme');
+ if(el.closest('.view-tools'))return sfx('view');
+ var h=el.getAttribute('href')||'';
+ if(on&&/\.html(#|$)/.test(h)&&!e.metaKey&&!e.ctrlKey&&el.target!=='_blank'){e.preventDefault();sfx('nav');setTimeout(function(){location.href=el.href},160);return}
+ sfx('click')},true);
+d.addEventListener('pointerover',function(e){if(e.pointerType!=='mouse')return;var t=e.target.closest('.tile,.xp,.chips li,.btn');if(!t||t.contains(e.relatedTarget))return;var n=Date.now();if(n-lastHover>90){lastHover=n;sfx('hover')}});
+/* tiles / list view */
+var grid=d.getElementById('cases'),vb=d.querySelectorAll('.view-tools [data-view]');
+if(grid&&vb.length){function setV(v){grid.classList.toggle('as-list',v==='list');vb.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-view')===v)});try{localStorage.setItem('caseview',v)}catch(e){}}
+ var sv='grid';try{sv=localStorage.getItem('caseview')||'grid'}catch(e){}setV(sv);
+ vb.forEach(function(b){b.addEventListener('click',function(){setV(b.getAttribute('data-view'))})})}
+})();</script>
 </body>
 </html>
