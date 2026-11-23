@@ -834,3 +834,17 @@ html[data-theme="dark"] .tile:hover,html[data-theme="dark"] .xp:hover{box-shadow
 .tile .tile-img{border-radius:10px;overflow:hidden}
 a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
 @media (prefers-reduced-motion:reduce){.tile:hover,.xp:hover,.btn:hover{transform:none}}
+
+/* v22: menu visible from the first screen on the main page */
+.wrap > .bar:not(.autohide) ~ .hero:first-of-type,.wrap > .bar:not(.autohide) + *{margin-top:76px}
+@media (max-width:860px){.wrap > .bar:not(.autohide) + *{margin-top:62px}}
+.bar{left:max(16px,calc((100vw - 1100px) / 2));right:max(16px,calc((100vw - 1100px) / 2))}
+@media (max-width:860px){.bar{left:8px;right:8px}}
+/* v23: on phones the photo sits above the headline, text runs full width */
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;grid-template-areas:"photo" "text" "btns";gap:20px}
+  .hero-photo{grid-area:photo;width:120px;max-width:120px;justify-self:start}
+  .hero-text{grid-area:text;grid-column:auto;grid-row:auto}
+  .hero-actions{grid-area:btns}
+}
+@media (max-width:600px){.hero{grid-template-columns:1fr}.hero-photo{width:104px;max-width:104px}}
