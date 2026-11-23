@@ -814,3 +814,23 @@ body:has(> .bar:not(.autohide)),body:has(> main > .bar:not(.autohide)){padding-t
 .sound-btn .i-on{display:none}
 html.sound-on .sound-btn .i-on{display:block}
 html.sound-on .sound-btn .i-off{display:none}
+
+/* ===== v21: Inter, typography, more air, soft hover ===== */
+:root{--font:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
+body{font-family:var(--font);font-size:15.5px;line-height:1.55;font-feature-settings:"cv11" 1,"ss01" 1}
+h1,h2,h3,h4,h5,h6{text-wrap:balance;letter-spacing:-.02em}
+p,li,.tile-t,.lede,.desc{text-wrap:pretty}
+p,li{line-height:1.55}
+.wrap{max-width:1100px;gap:112px}
+@media (max-width:860px){.wrap{gap:72px}}
+section{gap:28px}
+/* soft, consistent hover on interactive things */
+a,button,.btn,.tile,.xp,.chips li{transition:color .2s var(--ease),background-color .2s var(--ease),border-color .2s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease)}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.tile:hover,.xp:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(20,20,30,.35)}
+html[data-theme="dark"] .tile:hover,html[data-theme="dark"] .xp:hover{box-shadow:0 14px 32px -18px rgba(0,0,0,.8)}
+.tile,.xp{border-radius:14px}
+.tile .tile-img{border-radius:10px;overflow:hidden}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){.tile:hover,.xp:hover,.btn:hover{transform:none}}
